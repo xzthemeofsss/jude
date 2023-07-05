@@ -4,7 +4,7 @@
   "description": "A template for Telegram Bot using Telegraf Framework on Cloudflare Workers",
   "main": "index.js",
   "repository": "https://github.com/Tsuk1ko/cfworker-telegraf-template",
-  "author": "神代綺凜 <i@loli.best>",
+  "author": "xzthemeofsss",
   "license": "MIT",
   "private": true,
   "scripts": {
