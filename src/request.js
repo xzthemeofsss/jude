@@ -16,5 +16,5 @@ export async function saveMemo(body) {
     },
     body: JSON.stringify({ ...body, type: 'memo' }),
   });
-  console.log('result :>> ', result);
+  console.log('result :>> ', JSON.stringify(result));
 }
