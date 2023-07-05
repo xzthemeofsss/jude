@@ -1,7 +1,7 @@
 const { Telegraf } = require('telegraf');
 const { Application, Router } = require('@cfworker/web');
 const createTelegrafMiddleware = require('cfworker-middleware-telegraf');
-const { saveMemo, saveUrl } = require('./request');
+const { saveMemo, saveUrl,extractTitle } = require('./request');
 
 const bot = new Telegraf(BOT_TOKEN);
 
