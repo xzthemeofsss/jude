@@ -15,14 +15,18 @@ async function handleEntity(entity, caption, ctx) {
   if (entity.type === 'url') {
     const url = caption.substring(entity.offset, entity.offset + entity.length);
     const title = await extractTitle(url);
-    await saveUrl({ content: url, title });
-    ctx.telegram.sendMessage(ctx.message.chat.id, '链接保存成功啦');
+    const response = await saveUrl({ content: url, title });
+    if(response.status === 200){
+      ctx.telegram.sendMessage(ctx.message.chat.id, '链接保存成功啦');
+    }else{
+      console.log('ctx.message :>> ', ctx.message);
+      ctx.telegram.sendMessage(ctx.message.chat.id, '链接保存失败');
+    }
   }
 }
 
 bot.on('message', async ctx => {
   const { text, caption_entities, caption, entities } = ctx.message;
-  console.log('ctx.message :>> ', ctx.message);
   if (caption_entities) {
     await Promise.all(
       caption_entities.map(async entity => handleEntity(entity, caption, ctx))
@@ -31,8 +35,13 @@ bot.on('message', async ctx => {
     await Promise.all(
       entities.map(async entity => handleEntity(entity, text, ctx)));
   } else if (text) {
-    await saveMemo({ content: text });
-    ctx.telegram.sendMessage(ctx.message.chat.id, '速记保存成功啦');
+    const response = await saveMemo({ content: text });
+    if(response.status===200){
+      ctx.telegram.sendMessage(ctx.message.chat.id, '速记保存成功啦');
+    }else{
+      console.log('ctx.message :>> ', ctx.message);
+      ctx.telegram.sendMessage(ctx.message.chat.id, '速记保存失败');
+    }
   }
 });
 
