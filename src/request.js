@@ -7,7 +7,7 @@ export async function saveUrl(body) {
     },
     body: JSON.stringify({ ...body, type: 'url', folder: 'Telegram 收藏' }),
   });
-  console.log('result :>> ', result);
+  console.log('result :>> ', JSON.stringify(result));
 }
 
 export async function saveMemo(body) {
