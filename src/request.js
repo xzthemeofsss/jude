@@ -1,11 +1,13 @@
 export async function saveUrl(body) {
-  await fetch(CUBOX_API, {
+  console.log('body :>> ', body);
+  const result = await fetch(CUBOX_API, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ ...body, type: 'url', folder: 'Telegram 收藏' }),
   });
+  console.log('result :>> ', result);
 }
 
 export async function saveMemo(body) {
