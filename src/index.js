@@ -7,6 +7,7 @@ const bot = new Telegraf(BOT_TOKEN);
 
 bot.on('message', async ctx => {
   const { text, caption_entities, caption, entities } = ctx.message;
+  console.log('ctx.message :>> ', ctx.message);
   if (caption_entities) {
     await Promise.all(
       caption_entities.map(async entity => {
