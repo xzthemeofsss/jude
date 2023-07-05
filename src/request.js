@@ -7,7 +7,7 @@ export async function saveUrl(body) {
     },
     body: JSON.stringify({ ...body, type: 'url', folder: 'Telegram 收藏' }),
   });
-  console.log('result :>> ', JSON.stringify(result));
+  console.log('result :>> ', result.body);
 }
 
 export async function saveMemo(body) {
@@ -18,5 +18,12 @@ export async function saveMemo(body) {
     },
     body: JSON.stringify({ ...body, type: 'memo' }),
   });
-  console.log('result :>> ', JSON.stringify(result));
+  console.log('result :>> ', result.body);
+}
+
+export async function extractTitle(url){
+  const result = await fetch(url);
+  const html = await result.text();
+  const title = html.match(/<title>(.*)<\/title>/)[1];
+  return title;
 }
