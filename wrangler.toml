@@ -1,2 +1,3 @@
 name = "jude-worker"
 main = "dist/worker.js"
+compatibility_date = "2023-07-05"
