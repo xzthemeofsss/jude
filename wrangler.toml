@@ -1,2 +1,2 @@
-[site]
-entry-point = "dist"
+name = "jude-worker"
+main = "dist/worker.js"
