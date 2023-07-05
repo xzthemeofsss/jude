@@ -11,6 +11,8 @@ jobs:
     name: Deploy to Cloudflare Workers
     steps:
       - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm install
       - name: Build
         run: npm run build
       - name: Publish
