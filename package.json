@@ -1,9 +1,9 @@
 {
-  "name": "cfworker-telegraf-template",
-  "version": "2.0.1",
-  "description": "A template for Telegram Bot using Telegraf Framework on Cloudflare Workers",
+  "name": "Jude",
+  "version": "1.0.0",
+  "description": "Jude",
   "main": "index.js",
-  "repository": "https://github.com/Tsuk1ko/cfworker-telegraf-template",
+  "repository": "https://github.com/xzthemeofsss/jude",
   "author": "xzthemeofsss",
   "license": "MIT",
   "private": true,
