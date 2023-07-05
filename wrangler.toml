@@ -1,3 +1,6 @@
-name = "jude-worker"
+name = "jude"
 main = "dist/worker.js"
 compatibility_date = "2023-07-05"
+
+[env.production]
+name = "production"
